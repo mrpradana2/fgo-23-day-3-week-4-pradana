@@ -82,7 +82,7 @@ section {
   gap: 1rem;
 }
 
-section .card {
+.card {
   padding: 1rem;
   border-radius: 5px;
   display: flex;
@@ -93,7 +93,7 @@ section .card {
   transition: all 100ms ease-in-out;
 }
 
-section .card:hover {
+.card:hover {
   transform: scale(1.05);
 }
 
@@ -108,7 +108,8 @@ main > div > h3 {
 }
 
 main > div > #result {
-  margin-top: 10px;
+  margin: 10px auto 0;
   padding: 1rem;
   border: 1px solid cadetblue;
+  width: 50%;
 }

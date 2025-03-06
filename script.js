@@ -55,13 +55,23 @@ async function postData(event) {
     const objResult = await response.json();
     console.log(objResult);
 
-    const result = JSON.stringify(objResult);
-    console.log(result);
+    const card = document.createElement("div");
+    card.classList.add("card");
+    const userIdResult = document.createElement("p");
+    userIdResult.textContent = `User ID : ${objResult.userId}`;
+    card.insertAdjacentElement("beforeend", userIdResult);
+    const idResult = document.createElement("p");
+    idResult.textContent = `ID : ${objResult.id}`;
+    card.insertAdjacentElement("beforeend", idResult);
+    const titleResult = document.createElement("h1");
+    titleResult.textContent = objResult.title;
+    card.insertAdjacentElement("beforeend", titleResult);
+    const bodyResult = document.createElement("p");
+    bodyResult.textContent = objResult.body;
+    card.insertAdjacentElement("beforeend", bodyResult);
 
     const print = document.getElementById("result");
-    const elementResult = document.createElement("p");
-    elementResult.textContent = result;
-    print.insertAdjacentElement("beforeend", elementResult);
+    print.insertAdjacentElement("beforeend", card);
   } catch (error) {
     if (error instanceof Error) console.log(error.message);
   }
